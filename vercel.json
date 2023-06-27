@@ -2,10 +2,6 @@
   "version": 2,
   "public": true,
   "name": "weather-ssr-demo",
-  "rewrites": [{ "source": "/(.*)", "destination": "/api" }],
-  "functions": {
-    "api/index.js": {
-      "includeFiles": "dist/weather-ssr-demo/browser/**"
-    }
-  }
+  "builds": [{ "src": "package.json", "use": "@vercel/node" }],
+  "routes": [{ "src": "/(.*)", "dest": "/" }]
 }
